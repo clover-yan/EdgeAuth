@@ -246,6 +246,7 @@ export default function renderScannerPage() {
 
             // disable manual code input
             document.getElementById('manual-code').remove();
+            document.getElementById('manual-issuer').remove();
             document.getElementById('manual-input-label').remove();
             document.getElementById('add-token-btn').remove();
 
