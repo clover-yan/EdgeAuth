@@ -36,11 +36,15 @@ export default function renderScannerPage() {
                 <input type="text" id="manual-code" name="manual-code"
                     class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                     placeholder="Enter code here">
+                <input type="text" id="manual-issuer" name="manual-issuer"
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                    placeholder="Enter issuer here">
             </div>
             <div class="text-center">
                 <button
                     id="add-token-btn"
-                    class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                    class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    onclick="manualAdd()">
                     Add Token
                 </button>
             </div>
@@ -269,6 +273,12 @@ export default function renderScannerPage() {
         function error(err) {
             console.error(err);
             // Prints any errors to the console
+        }
+
+        function manualAdd() {
+            const manualCode = document.getElementById('manual-code').value;
+            const manualIssuer = document.getElementById('manual-issuer').value;
+            success(\`otpauth://totp/manual?secret=\${encodeURIComponent(manualCode)}&issuer=\${encodeURIComponent(manualIssuer)}\`);
         }
 
     </script>
