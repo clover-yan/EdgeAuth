@@ -1,0 +1,9 @@
+{
+	"d1_databases": [
+	  {
+		"binding": "DB",
+		"database_name": "edgeauth-db",
+		"database_id": "4b0d68f0-985f-44cf-936c-9cfab1dbb08c"
+	  }
+	]
+  }
